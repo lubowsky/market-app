@@ -1,0 +1,13 @@
+.Navbar {
+    width: 100%;
+    height: var(--navbar-height);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

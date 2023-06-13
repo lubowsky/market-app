@@ -1,0 +1,41 @@
+.Select {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    outline: none;
+    color: var(--primary-color);
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    letter-spacing: 0.15px;
+
+    color: #868686;
+
+    &:focus {
+        outline: none;
+    }
+
+    display: block;
+    width: 100%;
+    min-height: 32px;
+    appearance: none;
+    padding-left: 2%;
+}
+
+.selectWrapper {
+    margin-right: var(--cell-margin);
+    padding: 0;
+    box-sizing: border-box;
+    flex-grow: 2;
+
+    @media only screen and (max-width: 767px) {
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        margin: var(--cell-margin) 0;
+    }
+}

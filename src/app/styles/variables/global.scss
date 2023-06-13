@@ -1,0 +1,18 @@
+:root {
+    --font-family-main: 'Montserrat', "Times New Roman", serif;
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+
+    // Размеры
+    --navbar-height: 50px;
+    --photo-size: 182px;
+    --cell-margin: .75rem;
+
+    // Экран
+    --breakpointXS: '0';
+    --breakpointSM: '575px';
+    --breakpointMD: '767px';
+    --breakpointLG: '991px';
+    --breakpointXL: '1199px';
+    --breakpointXXL: '1399px'; 
+}

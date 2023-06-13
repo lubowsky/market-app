@@ -1,0 +1,24 @@
+.CardsGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: -11px;
+
+    @media only screen and (max-width: 575px) {
+        display: flex;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        margin: var(--cell-margin) 0;
+        align-items: center;
+    }
+}
+
+.gallery__item {
+    margin: var(--cell-margin);
+}
+
+.dumb {
+    width: var(--photo-size);
+}
