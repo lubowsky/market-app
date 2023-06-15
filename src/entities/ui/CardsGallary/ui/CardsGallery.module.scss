@@ -21,6 +21,7 @@
 
 .dumb {
     width: var(--photo-size);
+    
     @media only screen and (max-width: 575px) {
         display: none;
     }
