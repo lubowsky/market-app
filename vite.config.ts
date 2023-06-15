@@ -9,15 +9,15 @@ export default defineConfig({
   build: {
     outDir: 'build',
     assetsDir: 'static',
-    rollupOptions: {
-      output: {
-        entryFileNames: `[name].[hash].js`,
-        chunkFileNames: `[name].[hash].js`,
-        assetFileNames: (assetInfo) => {
-          const ext = path.extname(assetInfo.name)
-          return `static/${ext.slice(1)}/${assetInfo.name}`
-        },
-      },
-    },
+    // rollupOptions: {
+    //   output: {
+    //     entryFileNames: `[name].[hash].js`,
+    //     chunkFileNames: `[name].[hash].js`,
+    //     assetFileNames: (assetInfo) => {
+    //       const ext = path.extname(assetInfo.name)
+    //       return `static/${ext.slice(1)}/${assetInfo.name}`
+    //     },
+    //   },
+    // },
   },
 })
