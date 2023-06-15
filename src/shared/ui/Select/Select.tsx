@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 import { useStore } from 'effector-react';
 
 import {
@@ -9,7 +9,7 @@ import {
 
 import cls from './Select.module.scss';
 
-export const Select = () => {
+const Select = () => {
   const categories = useStore($categories);
 
   const handleChange = (e) => {
@@ -33,3 +33,5 @@ export const Select = () => {
     </div>
   );
 };
+
+export default memo(Select);

@@ -3,6 +3,27 @@
 @import "themes/light";
 @import "themes/dark";
 
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: local('Montserrat-Regular'),
+    url('../styles/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: local('Montserrat-Bold'),
+    url('../styles/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'),
+    url('../styles/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: bold;
+}
+
 .app {
     background: var(--bg-color);
     min-height: 100vh;

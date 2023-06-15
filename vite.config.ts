@@ -7,7 +7,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react(), eslint()],
   build: {
-    outDir: '../build',
+    outDir: 'build',
     assetsDir: 'static',
     rollupOptions: {
       output: {

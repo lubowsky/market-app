@@ -3,7 +3,7 @@
     border: 1px solid var(--border-color);
     border-radius: 5px;
     outline: none;
-    color: var(--primary-color);
+    color: var(--controls-color);
     
     font-family: 'Roboto';
     font-style: normal;
@@ -12,8 +12,6 @@
     line-height: 24px;
 
     letter-spacing: 0.15px;
-
-    color: #868686;
 
     &:focus {
         outline: none;

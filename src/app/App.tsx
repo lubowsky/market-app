@@ -11,8 +11,8 @@ import Container from 'react-bootstrap/Container';
 
 import { $products, fetchProducts } from './store/store';
 import Input from '../shared/ui/Input/Input';
-import { Select } from '../shared/ui/Select/Select';
-import { SelectNumber } from '../shared/ui/SelectNumber/SelectNumber';
+import Select from '../shared/ui/Select/Select';
+import SelectNumber from '../shared/ui/SelectNumber/SelectNumber';
 
 function App() {
   const { theme } = useTheme();
@@ -42,4 +42,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

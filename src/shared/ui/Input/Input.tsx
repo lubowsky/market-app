@@ -2,6 +2,7 @@ import React, {
   InputHTMLAttributes,
   memo,
   useRef,
+  useState,
 } from 'react';
 
 import { fetchSearchProducts } from '../../../app/store/store';
@@ -12,25 +13,39 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 
 interface InputProps extends HTMLInputProps {
   value?: string;
-  onChange?: (value: string) => void;
   autofocus?: boolean;
 }
 
 const Input = (props: InputProps) => {
   const {
     value,
-    onChange,
     type = 'text',
     placeholder,
   } = props;
   const ref = useRef<HTMLInputElement>(null);
 
+  const [inputError, setInputError] = useState(false);
+
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value);
+    handleSubmit(e);
   };
 
-  const onSelect = (e: any) => {
-    fetchSearchProducts(e.target.value);
+  const isInputValidate = (value: string): boolean => {
+    const regex = /^[a-zA-Z0-9 ]*$/;
+    return regex.test(value);
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    if (ref.current !== null) {
+      if (isInputValidate(ref.current.value)) {
+        fetchSearchProducts(ref.current.value);
+        setInputError(false);
+      } else {
+        setInputError(true);
+      }
+    }
   };
 
   return (
@@ -41,9 +56,13 @@ const Input = (props: InputProps) => {
         value={value}
         onChange={onChangeHandler}
         className={cls.input}
-        onSelect={onSelect}
         placeholder={placeholder}
       />
+      {inputError && (
+        <span className={cls.error}>
+          Search must contain only latin characters, numbers and spaces
+        </span>
+      )}
     </div>
   );
 };

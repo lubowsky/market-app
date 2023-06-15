@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 
 import { fetchProductsToLimit } from '../../../app/store/store';
 
 import cls from './SelectNumber.module.scss';
 
-export const SelectNumber = () => {
+const SelectNumber = () => {
   const [perPage, setPerPage] = useState(10);
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export const SelectNumber = () => {
     </div>
   );
 };
+
+export default memo(SelectNumber);

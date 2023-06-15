@@ -1,5 +1,6 @@
 .InputWrapper {
     display: flex;
+    flex-direction: column;
     width: 50%;
     height: 32px;
     top: 0;
@@ -18,7 +19,7 @@
     border: 1px solid var(--border-color);
     border-radius: 5px;
     outline: none;
-    color: var(--primary-color);
+    color: var(--controls-color);
 
     font-family: 'Roboto';
     font-style: normal;
@@ -27,8 +28,6 @@
     line-height: 24px;
 
     letter-spacing: 0.15px;
-
-    color: #868686;
 
     &:focus {
         outline: none;
@@ -41,4 +40,9 @@
     min-height: 32px;
     padding: 2%;
     background: url('../../assets/icons/search.svg') no-repeat 98% 50%;
+}
+
+.error {
+    color: red;
+    font-size: 10px;
 }
