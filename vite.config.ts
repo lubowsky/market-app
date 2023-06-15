@@ -6,9 +6,9 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), eslint()],
-  build: {
-    outDir: 'build',
-    assetsDir: 'static',
+  // build: {
+  //   outDir: 'build',
+  //   assetsDir: 'static',
     // rollupOptions: {
     //   output: {
     //     entryFileNames: `[name].[hash].js`,
@@ -19,5 +19,5 @@ export default defineConfig({
     //     },
     //   },
     // },
-  },
+  // },
 })
