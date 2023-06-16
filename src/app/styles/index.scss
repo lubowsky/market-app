@@ -4,7 +4,7 @@
 @import "themes/dark";
 
 @font-face {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat';
   src: local('Montserrat-Regular'),
     url('../styles/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
   font-weight: bold;
@@ -37,7 +37,3 @@
     justify-content: space-between;
     align-items: flex-end;
 }
-
-// .pagination {
-//     margin: 5px 0 20px var(- --cell-margin);
-// }
