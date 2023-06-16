@@ -29,13 +29,7 @@
     min-height: 100vh;
 }
 
-.page-wrapper {
-    max-width: 65%;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.FindBar {
+.findBar {
     margin: var(--cell-margin) auto;
     display: flex;
     flex-direction: row;
@@ -43,3 +37,7 @@
     justify-content: space-between;
     align-items: flex-end;
 }
+
+// .pagination {
+//     margin: 5px 0 20px var(- --cell-margin);
+// }

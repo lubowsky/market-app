@@ -2,7 +2,7 @@ import _times from 'lodash/times';
 
 import { Product } from '../model/types/types';
 
-import CardItem from '../../../../entities/ui/Card/Card';
+import CardItem from '../../Card/Card';
 
 import cls from './CardsGallery.module.scss';
 
@@ -11,7 +11,7 @@ interface CardsGalleryProps {
 }
 
 export const CardsGallery = ({ products }: CardsGalleryProps) => {
-  const dumbCount = 40;
+  const dumbCount = 20;
   
   return (
     <ul className={cls.CardsGallery}>

@@ -5,6 +5,9 @@ export const $products = createStore([]);
 export const $totalCount = createStore(0);
 
 export const $limit = createStore(10);
+export const setLimit = createEffect(async (perPage) => {
+  return perPage;
+});
 
 export const $categories = createStore([]);
 
@@ -28,12 +31,15 @@ export const fetchProductsToCategory = createEffect(async (value) => {
   return response.json();
 });
 
-export const fetchProductsToLimit = createEffect(async (perPage) => {
-  const response = await fetch(`https://dummyjson.com/products?limit=${perPage}&skip=${0}`);
+export const fetchProductsToLimit = createEffect(async ({perPage, skip}) => {
+  const response = await fetch(`https://dummyjson.com/products?limit=${perPage}&skip=${skip}`);
   return response.json();
 });
 
-$totalCount.on(fetchProductsToLimit.doneData, (_, data) => data.total);
+$totalCount
+  .on(fetchProducts.doneData, (_, data) => data.total)
+  .on(fetchSearchProducts.doneData, (_, data) => data.total)
+  .on(fetchProductsToLimit.doneData, (_, data) => data.total);
 
 $products
   .on(fetchProducts.doneData, (_, data) => data.products)
@@ -42,3 +48,5 @@ $products
   .on(fetchProductsToLimit.doneData, (_, data) => data.products);
 
 $categories.on(fetchCategories.doneData, (_, data) => data);
+
+$limit.on(setLimit.doneData, (_, data) => data);

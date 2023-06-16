@@ -1,25 +1,24 @@
-import { useState, useEffect, memo } from 'react';
 
-import { fetchProductsToLimit } from '../../../app/store/store';
+import { memo } from 'react';
+
+import { setLimit, $limit } from '../../../app/store/store';
 
 import cls from './SelectNumber.module.scss';
+import { useStore } from 'effector-react';
 
 const SelectNumber = () => {
-  const [perPage, setPerPage] = useState(10);
-
-  useEffect(() => {
-    fetchProductsToLimit(perPage);
-  }, [perPage]);
-
+ 
   const handlePerPageChange = (e) => {
-    setPerPage(parseInt(e.target.value));
+    setLimit(parseInt(e.target.value));
   };
 
+  const limit = useStore($limit);
+
   return (
-    <div className={cls.selectWrapper}>  
+    <div className={cls.selectWrapper}>
       <select
         className={cls.selectNumber}
-        value={perPage}
+        value={limit}
         onChange={handlePerPageChange}
       >
         <option value="10">10</option>
