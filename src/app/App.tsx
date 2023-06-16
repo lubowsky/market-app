@@ -43,9 +43,8 @@ function App() {
         <SelectNumber />
       </Container>
       <Container>
-        
         <CardsGallery products={products} />
-        {pages > 1 && <Pagination />}
+        {pages > 1 && products.length >= 10 && <Pagination />}
       </Container>
     </div>
   )

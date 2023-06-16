@@ -36,7 +36,10 @@ export const fetchProductsToLimit = createEffect(async ({perPage, skip}) => {
   return response.json();
 });
 
-$totalCount.on(fetchProducts.doneData, (_, data) => data.total);
+$totalCount
+  .on(fetchProducts.doneData, (_, data) => data.total)
+  .on(fetchSearchProducts.doneData, (_, data) => data.total)
+  .on(fetchProductsToLimit.doneData, (_, data) => data.total);
 
 $products
   .on(fetchProducts.doneData, (_, data) => data.products)
