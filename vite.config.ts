@@ -27,6 +27,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), eslint()],
+  base: '/market-app',
   build: {
     outDir: 'build',
     assetsDir: 'static',
